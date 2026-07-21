@@ -1,4 +1,5 @@
 // Dark mode et navbar
+//filtrage et validation
 document.addEventListener('DOMContentLoaded', function () {
 
     // ===== ANNÉE DYNAMIQUE ===
