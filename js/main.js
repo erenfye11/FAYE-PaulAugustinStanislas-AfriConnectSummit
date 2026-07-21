@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const yearEls = document.querySelectorAll('#year');
     yearEls.forEach(el => el.textContent = new Date().getFullYear());
 
-    // ===== DARK MODE =====
+    // ===== DARK MODE  =====
     const btnDark = document.getElementById('btn-dark');
     const html = document.documentElement;
 
