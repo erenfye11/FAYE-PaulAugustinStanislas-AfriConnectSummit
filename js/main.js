@@ -1,7 +1,7 @@
-// ===== ATTENDRE LE CHARGEMENT DU DOM =====
+// Dark mode et navbar
 document.addEventListener('DOMContentLoaded', function () {
 
-    // ===== ANNÉE DYNAMIQUE =====
+    // ===== ANNÉE DYNAMIQUE ===
     const yearEls = document.querySelectorAll('#year');
     yearEls.forEach(el => el.textContent = new Date().getFullYear());
 
