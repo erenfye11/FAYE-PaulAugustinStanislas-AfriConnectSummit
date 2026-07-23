@@ -55,86 +55,69 @@
         </section>
 
         <!-- FORMULAIRE + INFOS -->
-        <section class="contact-section ">
-            <div class="container">
-                <div class="contact-flex">
+        <section class="contact-section fade-in">
+           <!-- SECTION FORMULAIRE SEULE (STYLE INLINE FORCÉ) -->
+            <div style="max-width: 800px; margin: 40px auto; padding: 20px; font-family: sans-serif; color: #ffffff;">
+                <h2 style="font-size: 28px; font-weight: bold; margin-bottom: 5px; color: #ffffff;">S'inscrire à l'événement</h2>
+                 <p style="color: #a0aec0; margin-bottom: 30px;">Remplissez le formulaire ci-dessous pour réserver votre place.</p>
 
-                    <!-- FORMULAIRE -->
-                    <div class="contact-form-wrap">
-                        <h2>S'inscrire à l'événement</h2>
-                        <p style="color: var(--color-text-muted); margin-bottom: 2rem;">
-                            Remplissez le formulaire ci-dessous pour réserver votre place.
-                        </p>
+                 <form id="contactForm">
+                     <!-- Ligne 1 : Nom et Email -->
+                     <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
+                         <div style="flex: 1; min-width: 280px;">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #ffffff;">Nom complet *</label>
+                            <input type="text" placeholder="Ex: Amadou Diallo" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #4a5568; background-color: #1a202c; color: #ffffff; box-sizing: border-box;">
+                         </div>
+                         <div style="flex: 1; min-width: 280px;">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #ffffff;">Email *</label>
+                            <input type="email" placeholder="votre@email.com" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #4a5568; background-color: #1a202c; color: #ffffff; box-sizing: border-box;">
+                         </div>
+                     </div>
 
-                        <div id="form-succes" class="form-succes" style="display:none;">
-                            ✅ Inscription envoyée avec succès !
+                        <!-- Ligne 2 : Téléphone et Type -->
+                     <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
+                             <div style="flex: 1; min-width: 280px;">
+                                <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #ffffff;">Téléphone *</label>
+                                <input type="tel" placeholder="+221 77 000 00 00" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #4a5568; background-color: #1a202c; color: #ffffff; box-sizing: border-box;">
+                             </div>
+                            <div style="flex: 1; min-width: 280px;">
+                                 <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #ffffff;">Type de participation *</label>
+                                 <select required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #4a5568; background-color: #1a202c; color: #ffffff; box-sizing: border-box;">
+                                    <option value="" disabled selected>Choisir...</option>
+                                    <option value="participant">Participant Standard</option>
+                                    <option value="vip">Pass VIP</option>
+                                    <option value="presse">Presse</option>
+                                 </select>
+                            </div>
                         </div>
 
-                        <form id="form-contact" novalidate>
+            <!-- Ligne 3 : Pays -->
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #ffffff;">Pays *</label>
+                            <select required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #4a5568; background-color: #1a202c; color: #ffffff; box-sizing: border-box;">
+                                  <option value="" disabled selected>Choisir votre pays...</option>
+                                  <option value="SN">Sénégal</option>
+                                  <option value="CI">Côte d'Ivoire</option>
+                                  <option value="FR">France</option>
+                            </select>
+                        </div>
 
-                            <div class="form-group">
-                                <label for="nom">Nom complet *</label>
-                                <input type="text" id="nom" placeholder="Ex: Amadou Diallo" required>
-                                <div class="form-erreur" id="erreur-nom"></div>
-                            </div>
+                        <!-- Ligne 4 : Message -->
+                         <div style="margin-bottom: 25px;">
+                             <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #ffffff;">Message / Motivation *</label>
+                             <textarea rows="4" placeholder="Pourquoi souhaitez-vous participer à AfriConnect Summit 2026 ? (minimum 20 caractères)" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #4a5568; background-color: #1a202c; color: #ffffff; box-sizing: border-box; resize: vertical;"></textarea>
+                         </div>
 
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" id="email" placeholder="votre@email.com" required>
-                                <div class="form-erreur" id="erreur-email"></div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="telephone">Téléphone *</label>
-                                <input type="tel" id="telephone" placeholder="+221 77 000 00 00" required>
-                                <div class="form-erreur" id="erreur-telephone"></div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="participation">Type de participation *</label>
-                                <select id="participation" required>
-                                    <option value="">Choisir...</option>
-                                    <option value="participant">Participant</option>
-                                    <option value="intervenant">Intervenant</option>
-                                    <option value="sponsor">Sponsor</option>
-                                    <option value="presse">Presse</option>
-                                    <option value="benevole">Bénévole</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="pays">Pays *</label>
-                                <select id="pays" required>
-                                    <option value="">Choisir votre pays...</option>
-                                    <option value="sn">Sénégal</option>
-                                    <option value="ci">Côte d'Ivoire</option>
-                                    <option value="ml">Mali</option>
-                                    <option value="gh">Ghana</option>
-                                    <option value="ng">Nigeria</option>
-                                    <option value="cm">Cameroun</option>
-                                    <option value="ma">Maroc</option>
-                                    <option value="tn">Tunisie</option>
-                                    <option value="za">Afrique du Sud</option>
-                                    <option value="ke">Kenya</option>
-                                    <option value="et">Éthiopie</option>
-                                    <option value="other">Autre</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="message">Message / Motivation *</label>
-                                <textarea id="message" rows="5" placeholder="Pourquoi souhaitez-vous participer à AfriConnect Summit 2026 ? (minimum 20 caractères)" required></textarea>
-                                <div class="form-erreur" id="erreur-message"></div>
-                            </div>
-
-                            <button type="submit" class="btn btn-gold" style="width: 100%; justify-content: center;">
-                                Envoyer mon inscription
-                                <i class="bi bi-arrow-right"></i>
-                            </button>
-
-                        </form>
+                         <!-- Bouton -->
+                         <button type="submit" style="width: 100%; padding: 16px; background-color: #f59e0b; color: #000000; font-weight: bold; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">
+                            Envoyer mon inscription &rarr;
+                         </button>
+                    </form>
+            </div>
+                <!-- ZONE POUR LE MESSAGE DE CONFIRMATION -->
+                    <div id="confirmationMessage" style="display: none; margin-top: 20px; padding: 15px; background-color: #10b981; color: #ffffff; border-radius: 8px; text-align: center; font-weight: bold;">
+                         ✅ Votre inscription a bien été envoyée ! Nous vous contacterons très rapidement.
                     </div>
-
                     <!-- INFOS CONTACT -->
                     <div class="contact-info">
                         <div class="info-card">
@@ -304,5 +287,18 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        // 1. Empêcher la page de se recharger
+        e.preventDefault();
+
+        // 2. Afficher le message de confirmation
+        const messageDiv = document.getElementById('confirmationMessage');
+        messageDiv.style.display = 'block';
+
+        // 3. Reinitialiser les champs du formulaire
+        this.reset();
+    });
+</script>
 </body>
 </html>
